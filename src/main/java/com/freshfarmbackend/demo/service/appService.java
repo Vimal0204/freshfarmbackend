@@ -36,7 +36,7 @@ public interface appService {
 
     Farmers getfarmerId(String email);
 
-    Orders addOrder(Orders orders, int cid, int fid);
+    Orders addOrder(Orders orders, int cid, int fid, int pid);
     public Orders updateOrderStatus(Orders orders,int id);
 
     boolean checkemailpan(String email, String pancard);
