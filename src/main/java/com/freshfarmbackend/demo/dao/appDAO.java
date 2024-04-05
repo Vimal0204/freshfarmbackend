@@ -39,7 +39,7 @@ public interface appDAO {
 
 
 
-    Orders addOrder(Orders orders, int cid, int fid);
+    Orders addOrder(Orders orders, int cid, int fid, int pid);
     Orders updateOrderStatus(Orders orders,int id);
 
     boolean checkemailpan(String email, String pancard);
