@@ -160,12 +160,16 @@ public class appDAOImpl implements appDAO{
 //    }
 
     @Override
-    public Orders addOrder(Orders orders, int cid, int fid) {
+    public Orders addOrder(Orders orders, int cid, int fid, int pid) {
         Farmers farmers=entityManager.find(Farmers.class,fid);
         Customers customers=entityManager.find(Customers.class,cid);
+        Product product=entityManager.find(Product.class,pid);
+        product.addOrder(orders);
         farmers.addOrder(orders);
         customers.addOrder(orders);
         entityManager.persist(orders);
+        entityManager.persist(farmers);
+        entityManager.persist(product);
         return orders;
     }
 
