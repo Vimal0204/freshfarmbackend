@@ -108,8 +108,8 @@ public class appServiceImpl implements appService{
 
     @Override
     @Transactional
-    public Orders addOrder(Orders orders, int cid, int fid) {
-        return appDAO.addOrder(orders,cid,fid);
+    public Orders addOrder(Orders orders, int cid, int fid, int pid) {
+        return appDAO.addOrder(orders,cid,fid,pid);
     }
 
     @Override
