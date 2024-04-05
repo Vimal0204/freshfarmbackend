@@ -39,9 +39,9 @@ public class FreshFarmRestController {
         return getProducts;
     }
     // for placing the order.. -- kaam kr rha h y bhi
-    @PostMapping("/orders/{cid}/{fid}")
-    public Orders addOrder(@RequestBody Orders orders,@PathVariable int cid,@PathVariable int fid){
-        return  appService.addOrder(orders,cid,fid);
+    @PostMapping("/orders/{cid}/{fid}/{pid}")
+    public Orders addOrder(@RequestBody Orders orders,@PathVariable int cid,@PathVariable int fid,@PathVariable int pid){
+        return  appService.addOrder(orders,cid,fid,pid);
 
     }
     // for cancelling the order... kaam kr rha h..
