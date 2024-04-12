@@ -124,8 +124,8 @@ public class FreshFarmRestController {
         return appService.addCustomerDetails(customers,email);
     }
     // check the email and pancard -sahi h y bhi..
-    @GetMapping("/farmerpp/{email}/{pancard}")
-    public boolean checkMailPan(@PathVariable String email,@PathVariable String pancard){
+    @GetMapping("/farmerpp/{email}")
+    public boolean checkMailPan(@PathVariable String email,@RequestParam String pancard){
         return appService.checkemailpan(email,pancard);
     }
     // update the password - sahi chal rha h..
@@ -153,7 +153,7 @@ public class FreshFarmRestController {
         return appService.getProductbbycart(id);
     }
 
-        @GetMapping("/checkFarmerEmail/{email}")
+    @GetMapping("/checkFarmerEmail/{email}")
     public boolean checkFarmerEmail(@PathVariable String email){
        return appService.checkFarmerEmail(email);
     }
