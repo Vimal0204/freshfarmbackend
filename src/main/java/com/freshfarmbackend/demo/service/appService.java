@@ -50,4 +50,10 @@ public interface appService {
     int getFarmerIdbyProduct(int id);
 
     int getProductbbycart(int id);
+
+        boolean checkFarmerEmail(String email);
+
+    String checkFarmerCredentials(String email, String password);
+
+    void createFarmer(Farmers farmers);
 }
