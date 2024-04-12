@@ -234,6 +234,38 @@ public class appDAOImpl implements appDAO{
         entityManager.merge(farmers);
         return farmers;
     }
+    @Override
+    public boolean checkFarmerEmail(String email) {
+        TypedQuery<Farmers> theQuery = entityManager.createQuery("from Farmers f where f.email= :email",Farmers.class).setParameter("email",email);
+        Farmers farmers;
+        try{
+            farmers=theQuery.getSingleResult();
+        }catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String checkFarmerCredentials(String email, String password) {
+        TypedQuery<Farmers> theQuery = entityManager.createQuery("from Farmers f where f.email= :email"+" and f.password= :password",Farmers.class).setParameter("email",email).setParameter("password",password);
+        Farmers farmers;
+        try{
+            farmers=theQuery.getSingleResult();
+           return farmers.getStatus();
+
+        }catch (Exception e){
+            return "";
+        }
+//        return true;
+    }
+
+    @Override
+    public void createFarmer(Farmers farmers) {
+        entityManager.persist(farmers);
+        System.out.println(farmers);
+    }
+
 
     @Override
     public String orderName(String email) {
