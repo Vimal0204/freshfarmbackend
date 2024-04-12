@@ -150,6 +150,22 @@ public class appServiceImpl implements appService{
     public int getProductbbycart(int id) {
         return appDAO.getProductbbycart(id);
     }
+
+    @Override
+    public boolean checkFarmerEmail(String email) {
+        return appDAO.checkFarmerEmail(email);
+    }
+
+    @Override
+    public String checkFarmerCredentials(String email, String password) {
+        return appDAO.checkFarmerCredentials(email,password);
+    }
+
+    @Override
+    @Transactional
+    public void createFarmer(Farmers farmers) {
+        appDAO.createFarmer(farmers);
+    }
 //    @Override
 //    public String orderName(String email){return appDAO.orderName(email)};
 }
