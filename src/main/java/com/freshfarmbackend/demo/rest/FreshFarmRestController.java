@@ -157,8 +157,8 @@ public class FreshFarmRestController {
     public boolean checkFarmerEmail(@PathVariable String email){
        return appService.checkFarmerEmail(email);
     }
-    @GetMapping("/checkFarmerCredentials/{email}/{password}")
-    public String checkFarmerCredentials(@PathVariable String email,@PathVariable String password){
+    @GetMapping("/checkFarmerCredentials/{email}")
+    public String checkFarmerCredentials(@PathVariable String email,@RequestParam String password){
         return appService.checkFarmerCredentials(email,password);
     }
     @PostMapping("/farmer/createFarmer")
