@@ -152,4 +152,17 @@ public class FreshFarmRestController {
     public int getProductbycart(@PathVariable int id){
         return appService.getProductbbycart(id);
     }
+
+        @GetMapping("/checkFarmerEmail/{email}")
+    public boolean checkFarmerEmail(@PathVariable String email){
+       return appService.checkFarmerEmail(email);
+    }
+    @GetMapping("/checkFarmerCredentials/{email}/{password}")
+    public String checkFarmerCredentials(@PathVariable String email,@PathVariable String password){
+        return appService.checkFarmerCredentials(email,password);
+    }
+    @PostMapping("/farmer/createFarmer")
+    public void createFarmer(@RequestBody Farmers farmers){
+        appService.createFarmer(farmers);
+    }
 }
