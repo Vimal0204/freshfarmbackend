@@ -274,8 +274,9 @@ public class appDAOImpl implements appDAO{
     @Override
     public String getFarmerMailByOrderId(int id) {
         Orders orders=entityManager.find(Orders.class,id);
-        String email=orders.getFarmers().getEmail();
-        return email;
+        int fid=orders.getFarmers().getId();
+        Farmers farmer=entityManager.find(Farmers.class,fid);
+        return farmer.getEmail();
         
     }
 
