@@ -51,9 +51,12 @@ public interface appService {
 
     int getProductbbycart(int id);
 
-        boolean checkFarmerEmail(String email);
+    boolean checkFarmerEmail(String email);
 
     String checkFarmerCredentials(String email, String password);
 
     void createFarmer(Farmers farmers);
+    String getFarmerEmail(int id);
+
+    String getFarmerMailByOrderId(int id);
 }
