@@ -165,4 +165,12 @@ public class FreshFarmRestController {
     public void createFarmer(@RequestBody Farmers farmers){
         appService.createFarmer(farmers);
     }
+        @GetMapping("/farmerEmailById/{id}")
+    public String getFarmerEmailById(@PathVariable int id){
+        return appService.getFarmerEmail(id);
+    }
+    @GetMapping("/farmerEmailByOrderId/{id}")
+    public String getFarmerMailByOrderId(@PathVariable int id){
+        return appService.getFarmerMailByOrderId(id);
+    }
 }
