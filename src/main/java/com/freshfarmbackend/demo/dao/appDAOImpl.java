@@ -265,6 +265,17 @@ public class appDAOImpl implements appDAO{
         entityManager.persist(farmers);
         System.out.println(farmers);
     }
+    @Override
+    public String getFarmerEmail(int id) {
+        Farmers farmers=entityManager.find(Farmers.class,id);
+        return farmers.getEmail();
+    }
+
+    @Override
+    public String getFarmerMailByOrderId(int id) {
+        Farmers farmers=entityManager.find(Farmers.class,id);
+        return farmers.getEmail();
+    }
 
 
     @Override
