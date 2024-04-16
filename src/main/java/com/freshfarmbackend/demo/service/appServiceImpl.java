@@ -166,6 +166,15 @@ public class appServiceImpl implements appService{
     public void createFarmer(Farmers farmers) {
         appDAO.createFarmer(farmers);
     }
+    @Override
+    public String getFarmerEmail(int id) {
+        return appDAO.getFarmerEmail(id);
+    }
+
+    @Override
+    public String getFarmerMailByOrderId(int id) {
+        return appDAO.getFarmerMailByOrderId(id);
+    }
 //    @Override
 //    public String orderName(String email){return appDAO.orderName(email)};
 }
