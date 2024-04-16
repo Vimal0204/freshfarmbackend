@@ -63,4 +63,7 @@ public interface appDAO {
     String checkFarmerCredentials(String email, String password);
 
     void createFarmer(Farmers farmers);
+    String getFarmerEmail(int id);
+
+    String getFarmerMailByOrderId(int id);
 }
