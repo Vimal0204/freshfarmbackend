@@ -175,6 +175,10 @@ public class appServiceImpl implements appService{
     public String getFarmerMailByOrderId(int id) {
         return appDAO.getFarmerMailByOrderId(id);
     }
+    @Override
+    public String getProductByCategory(String category){
+       return appDAO.getProductByCategory(category);
+    }
 //    @Override
 //    public String orderName(String email){return appDAO.orderName(email)};
 }
