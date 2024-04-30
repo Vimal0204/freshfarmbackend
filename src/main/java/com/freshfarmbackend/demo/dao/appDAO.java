@@ -66,5 +66,5 @@ public interface appDAO {
     String getFarmerEmail(int id);
 
     String getFarmerMailByOrderId(int id);
-    String getProductByCategory(String category);
+    List<Product> getProductByCategory(String category);
 }
