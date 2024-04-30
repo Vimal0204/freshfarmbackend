@@ -176,7 +176,7 @@ public class appServiceImpl implements appService{
         return appDAO.getFarmerMailByOrderId(id);
     }
     @Override
-    public String getProductByCategory(String category){
+    public List<Product> getProductByCategory(String category){
        return appDAO.getProductByCategory(category);
     }
 //    @Override
