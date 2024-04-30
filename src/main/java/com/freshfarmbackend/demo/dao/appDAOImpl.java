@@ -282,7 +282,7 @@ public class appDAOImpl implements appDAO{
 
     @Override
     public List<Product> getProductByCategory(String category){
-        TypedQuery<Product> theQuery = entityManager.createQuery("from Product p where p.category= :category",Product.class).setParameter("category",category);
+        TypedQuery<Product> theQuery = entityManager.createQuery("from Product p where p.name= :category",Product.class).setParameter("category",name);
         return theQuery.getResultList();
     }
 
