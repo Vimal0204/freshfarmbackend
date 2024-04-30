@@ -25,7 +25,8 @@ public class Product {
     private double price;
     @Column(name = "imagelink")
     private String imagelink;
-
+    @Column(name="category")
+    private String category;
     @Column(name = "cart_id")
     @OneToMany(mappedBy = "product",cascade =
             {CascadeType.REFRESH,CascadeType.MERGE,CascadeType.DETACH},fetch = FetchType.LAZY)
@@ -55,11 +56,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, int quantity, double price, String imagelink) {
+    public Product(String name, int quantity, double price, String imagelink,String category) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.imagelink = imagelink;
+	this.category=category;
     }
 
     public int getId() {
@@ -101,6 +103,13 @@ public class Product {
     public void setImagelink(String imagelink) {
         this.imagelink = imagelink;
     }
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public Farmers getFarmer() {
         return farmer;
@@ -132,6 +141,7 @@ public class Product {
                 "name='" + name + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
+		", category="+category+
                 ", imagelink='" + imagelink + '\'' +
                 '}';
     }
