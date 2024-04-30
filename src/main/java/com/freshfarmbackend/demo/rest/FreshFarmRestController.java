@@ -57,6 +57,12 @@ public class FreshFarmRestController {
 //        System.out.println(getProducts.get(0).getFarmer());
         return getProducts;
     }
+    @GetMapping("/getProduct/{category}")
+    public List<Product> searchProduct(@PathVariable String category){
+        List<Product> getProducts = appService.getProductByCategory(category);
+//        System.out.println(getProducts.get(0).getFarmer());
+        return getProducts;
+    }
     // get products by farmer id -kaam kr rha h
     @GetMapping("/getProductByFarmerId/{identifyingId}")
     public List<Product> getProductsByFarmerId(@PathVariable int identifyingId){
